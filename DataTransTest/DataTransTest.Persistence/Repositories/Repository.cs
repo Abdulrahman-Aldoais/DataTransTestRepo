@@ -15,7 +15,7 @@ namespace DataTransTest.Persistence.Repositories
             //con = new SqlConnection(constr);
         }
         //To Add Employee details
-        public void AddEmployee(EmpModel objEmp)
+        public void AddEmployee(Employee objEmp)
         {
             //Additing the employess
             try
@@ -31,13 +31,13 @@ namespace DataTransTest.Persistence.Repositories
             }
         }
         //To view employee details with generic list 
-        public List<EmpModel> GetAllEmployees()
+        public List<Employee> GetAllEmployees()
         {
             try
             {
                 connection();
                 con.Open();
-                IList<EmpModel> EmpList = con.Query<EmpModel>(
+                IList<Employee> EmpList = con.Query<Employee>(
 "GetEmployees").ToList();
                 con.Close();
                 return EmpList.ToList();
@@ -48,7 +48,7 @@ namespace DataTransTest.Persistence.Repositories
             }
         }
         //To Update Employee details
-        public void UpdateEmployee(EmpModel objUpdate)
+        public void UpdateEmployee(Employee objUpdate)
         {
             try
             {

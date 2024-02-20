@@ -14,6 +14,7 @@ namespace DataTransTest.Persistence.DataBase
 
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
 
 

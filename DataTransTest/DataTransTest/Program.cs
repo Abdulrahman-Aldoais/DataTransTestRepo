@@ -1,5 +1,9 @@
+using DataTransTest.Application.Repositories.EmployeeRepositoty;
+using DataTransTest.Application.Serveses.EmployeeServices;
 using DataTransTest.Middlewares;
+using DataTransTest.Persistence;
 using DataTransTest.Persistence.DataBase;
+using DataTransTest.Persistence.Repositories.EmployeeRepository;
 using DataTransTest.Serveses;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,12 +13,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<TimeService>();
 
+
+
+
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     string connectionString = builder.Configuration.GetConnectionString(name: "Connection");
     options.UseSqlServer(connectionString);
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
+builder.Services.AddSingleton<DapperContext>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IEmployeeReadRepositoty, EmployeeReadRepository>();
+builder.Services.AddScoped<IEmployeeWriteRepositoty, EmployeeWriteRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

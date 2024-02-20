@@ -2,7 +2,7 @@
 
 namespace DataTransTest.Domain.Entity
 {
-    public class EmpModel
+    public class Employee
     {
         public int Id { get; set; }
 
@@ -21,7 +21,7 @@ namespace DataTransTest.Domain.Entity
         [MaxLength(20)]
         public string Phone { get; set; } = "";
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime UpdateAt { get; set; } = DateTime.Now;
+        public DateTime? CreatedAt { get; set; } = DateTime.Now;
+        public DateTime? UpdateAt { get; set; } = DateTime.Now;
     }
 }

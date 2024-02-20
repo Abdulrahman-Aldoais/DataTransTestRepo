@@ -15,11 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{11516327-0123-4C85-B2DD-D501B45FAB53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransTest.Domain", "DataTransTest.Domain\DataTransTest.Domain.csproj", "{4FA785CE-3196-4D12-9E77-4A3BCAA8DFEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTransTest.Domain", "DataTransTest.Domain\DataTransTest.Domain.csproj", "{4FA785CE-3196-4D12-9E77-4A3BCAA8DFEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransTest.Persistence", "DataTransTest.Persistence\DataTransTest.Persistence.csproj", "{22590743-42BB-40B7-9C58-5E391951F433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTransTest.Persistence", "DataTransTest.Persistence\DataTransTest.Persistence.csproj", "{22590743-42BB-40B7-9C58-5E391951F433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransTest.Application", "DataTransTest.Application\DataTransTest.Application.csproj", "{4F949AF3-45B9-4708-81AD-69E3EC84577A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTransTest.Application", "DataTransTest.Application\DataTransTest.Application.csproj", "{4F949AF3-45B9-4708-81AD-69E3EC84577A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "coreLibraries", "coreLibraries", "{2B454999-C0F7-487D-916E-FA87DE1D0E93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistence", "Core.Persistence\Core.Persistence.csproj", "{99BA6E49-5B20-4C9C-AFB5-51CD6B16BF89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{4F949AF3-45B9-4708-81AD-69E3EC84577A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F949AF3-45B9-4708-81AD-69E3EC84577A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F949AF3-45B9-4708-81AD-69E3EC84577A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99BA6E49-5B20-4C9C-AFB5-51CD6B16BF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BA6E49-5B20-4C9C-AFB5-51CD6B16BF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BA6E49-5B20-4C9C-AFB5-51CD6B16BF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BA6E49-5B20-4C9C-AFB5-51CD6B16BF89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +64,8 @@ Global
 		{4FA785CE-3196-4D12-9E77-4A3BCAA8DFEC} = {5CA90812-CBD4-412B-B4D7-809F0FBFA14E}
 		{22590743-42BB-40B7-9C58-5E391951F433} = {CDD38606-7CA9-4CED-BEA4-4D3DA92A6CF5}
 		{4F949AF3-45B9-4708-81AD-69E3EC84577A} = {5CA90812-CBD4-412B-B4D7-809F0FBFA14E}
+		{2B454999-C0F7-487D-916E-FA87DE1D0E93} = {C920F556-615B-46DF-AE50-38EBAEC5B6F7}
+		{99BA6E49-5B20-4C9C-AFB5-51CD6B16BF89} = {2B454999-C0F7-487D-916E-FA87DE1D0E93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE9F9868-C8EB-48EA-9A2E-89332C7B2494}
