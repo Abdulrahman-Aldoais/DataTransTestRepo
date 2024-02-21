@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace DataTransTest.Domain.Entity
 {
-    [Index("Email", IsUnique = true)]
     public class User
     {
         public int Id { get; set; }

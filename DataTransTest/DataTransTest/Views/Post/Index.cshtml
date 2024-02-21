@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DataTransTest.Domain.Entity.Post>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top:20px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+
+            <div class="panel-heading text-center bg-dark text-white">
+                <h2 class="mb-4">المـنشــورات</h2>
+                <p style="margin-top:20px;">
+                    <button class="btn btn-success mb-2 mt-2 d-grid w-100" type="button">
+                        <span class="d-flex justify-content-center align-items-center text-nowrap">
+                            <i></i>
+                            <a asp-action="Create" asp-controller="Post" style="color: white; text-decoration: none;">اضافة</a>
+                        </span>
+                    </button>
+                </p>
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th> @Html.DisplayNameFor(model => model.Id)</th>
+                        <th> @Html.DisplayNameFor(model => model.Title)</th>
+                        <th> @Html.DisplayNameFor(model => model.IsPublished)</th>
+                        <th> @Html.DisplayNameFor(model => model.CreationDate)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var post in Model)
+                    {
+                        <tr>
+                            <td>@post.Id</td>
+                            <td>@post.Title</td>
+                            <td>@post.IsPublished</td>
+                            <td>@post.CreationDate</td>
+                            <td>
+                                <button type="button" class="btn btn-success" onclick="addPost(@post.Id)">تعديل</button>
+                                <button type="button" class="btn btn-danger" onclick="deletePost(@post.Id)">حذف</button>
+                                <button type="button" class="btn btn-danger" onclick="redirectToAddComment(@post.Id)">كتابة تعليق</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+   
+
+    <script>
+        function editPost(postId) {
+            alert('Editing post with ID ' + postId);
+        }
+
+        function deletePost(postId) {
+            alert('Deleting post with ID ' + postId);
+        }
+
+        function redirectToAddComment(postId) {
+            window.location.href = '/Post/AddCommend/' + postId;
+        }
+    </script>
+    }

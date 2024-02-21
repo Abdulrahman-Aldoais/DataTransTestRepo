@@ -68,7 +68,7 @@
                 data: {},
                 success: function (data) {
                     $("#tblBody").empty();
-                    
+
                     if (data.getInfo.length > 0) {
                         for (var i = 0; i < data.getInfo.length; i++) {
                             $("#tblBody").append("<tr>" +
@@ -100,11 +100,11 @@
             $("#Emp_ID").val(0);
             $("#btnSaveEmp").val("Add Employee");
             $("#btnSaveEmp").removeClass("btn-primary");
-            $("#btnSaveEmp").addClass("btn-success");            
+            $("#btnSaveEmp").addClass("btn-success");
             $(".modal-title").text("Add New Employee");
             $("#employeeModal").modal('show');
             $(".modal-header").addClass('bg-success');
-            $(".modal-header").removeClass('bg-primary');      
+            $(".modal-header").removeClass('bg-primary');
         });
 
         $("#btnSaveEmp").click(function () {
@@ -115,7 +115,7 @@
                     url: oForm.action,
                     data: new FormData(oForm),
                     success: function (data) {
-                        
+
                         if (data.success == true) {
                             if (data.Exceptions == "Exist") {
                                 $("#Username").val("").focus();
@@ -135,7 +135,7 @@
                 };
 
                 if ($("form").attr('enctype') == "multipart/form-data") {
-                        ajaxConfig["contentType"] = false,
+                    ajaxConfig["contentType"] = false,
                         ajaxConfig["processData"] = false;
                 }
                 $.ajax(ajaxConfig);
@@ -151,7 +151,7 @@
                 url: "/Employee/GetEmployeeById",
                 //url: "/Employee/GetEmployeeById",
                 data: {
-                    empID:id
+                    empID: id
                 },
                 success: function (data) {
                     var data = data.emp;
@@ -168,10 +168,10 @@
                     $(".modal-title").text("Update Employee");
                     $("#btnSaveEmp").val("Update Employee");
                     $("#btnSaveEmp").addClass("btn-primary");
-                    $("#btnSaveEmp").removeClass("btn-success");  
+                    $("#btnSaveEmp").removeClass("btn-success");
                     $("#employeeModal").modal('show');
                     $(".modal-header").removeClass('bg-success');
-                    $(".modal-header").addClass('bg-primary');                   
+                    $(".modal-header").addClass('bg-primary');
 
                 },
                 error: function (er) {

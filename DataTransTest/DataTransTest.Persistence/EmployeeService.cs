@@ -32,35 +32,7 @@ namespace DataTransTest.Persistence
             return category;
         }
 
-        //public async Task<Employee> Add(Employee category)
-        //{
-        //    var query = "INSERT INTO Employees (FirstName, LastName, Phone, Address, Email) " +
-        //                "VALUES (@FirstName, @LastName, @Phone, @Address, @Email);" +
-        //                "SELECT CAST(SCOPE_IDENTITY() as int)";
 
-        //    var parameters = new DynamicParameters();
-        //    parameters.Add("@FirstName", category.FirstName, DbType.String);
-        //    parameters.Add("@LastName", category.LastName, DbType.String);
-        //    parameters.Add("@Phone", category.Phone, DbType.String);
-        //    parameters.Add("@Address", category.Address, DbType.String);
-        //    parameters.Add("@Email", category.Email, DbType.String);
-
-        //    using var connection = _context.CreateConnection();
-        //    var id = await connection.QuerySingleAsync<int>(query, parameters);
-
-        //    var createdEmployee = new Employee
-        //    {
-        //        Id = id,
-        //        FirstName = category.FirstName,
-        //        LastName = category.LastName,
-        //        Address = category.Address,
-        //        CreatedAt = DateTime.Now,
-        //        Email = category.Email,
-        //        Phone = category.Phone
-        //    };
-
-        //    return createdEmployee;
-        //}
 
 
 

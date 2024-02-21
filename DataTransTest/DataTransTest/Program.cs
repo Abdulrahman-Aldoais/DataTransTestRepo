@@ -1,9 +1,15 @@
+using DataTransTest.Application.Repositories.CommentRepository;
 using DataTransTest.Application.Repositories.EmployeeRepositoty;
+using DataTransTest.Application.Repositories.PostRepository;
+using DataTransTest.Application.Serveses.CommentService;
 using DataTransTest.Application.Serveses.EmployeeServices;
+using DataTransTest.Application.Serveses.PostService;
 using DataTransTest.Middlewares;
 using DataTransTest.Persistence;
 using DataTransTest.Persistence.DataBase;
+using DataTransTest.Persistence.Repositories.CommentRepository;
 using DataTransTest.Persistence.Repositories.EmployeeRepository;
+using DataTransTest.Persistence.Repositories.PostRepository;
 using DataTransTest.Serveses;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,9 +33,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
+
+builder.Services.AddScoped<IPostReadRepository, PostReadRepository>();
+builder.Services.AddScoped<IPostWriteRepository, PostWriteRepository>();
+
+builder.Services.AddScoped<ICommentReadRepository, CommentReadRepository>();
+builder.Services.AddScoped<ICommentWriteRepository, CommentWriteRepository>();
+
 builder.Services.AddScoped<IEmployeeReadRepositoty, EmployeeReadRepository>();
 builder.Services.AddScoped<IEmployeeWriteRepositoty, EmployeeWriteRepository>();
-
+//builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

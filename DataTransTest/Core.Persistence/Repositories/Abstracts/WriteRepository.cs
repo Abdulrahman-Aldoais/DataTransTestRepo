@@ -25,29 +25,9 @@ namespace Core.Persistence.Repositories.Abstracts
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            try
-            {
-                // Try to save changes to the database
-                Context.Entry(entity).State = EntityState.Added;
-                await Context.SaveChangesAsync();
-                return entity;
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                // Get the entity that caused the concurrency exception
-                var entry = ex.Entries.Single();
-                // Reload the entity from the database
-                await entry.ReloadAsync();
-                // Apply the changes again
-                entry.CurrentValues.SetValues(entry.OriginalValues);
-                await Context.SaveChangesAsync();
-                return entity;
-            }
-            catch (Exception ex)
-            {
-                // Throw a new exception with the original message
-                throw new Exception(ex.Message);
-            }
+            Context.Set<TEntity>().Add(entity);
+            await Context.SaveChangesAsync();
+            return entity;
         }
 
         public TEntity Delete(TEntity entity)

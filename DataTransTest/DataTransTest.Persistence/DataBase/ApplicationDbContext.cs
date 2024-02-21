@@ -1,3 +1,5 @@
+
+
 using DataTransTest.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +18,8 @@ namespace DataTransTest.Persistence.DataBase
         public DbSet<Product> Products { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
 
 

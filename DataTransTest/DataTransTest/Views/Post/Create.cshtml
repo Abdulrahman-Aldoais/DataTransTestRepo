@@ -1,0 +1,50 @@
+﻿@model DataTransTest.Domain.Entity.Post
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <form class="form-horizontal" style="padding:0px 20px;" asp-action="Create" asp-controller="Post" role="form" autocomplete="off">
+
+        <div class="row">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsPublished, htmlAttributes: new { @class = "control-label" })
+
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(model => model.IsPublished, new { @class = "checkbox" })
+                            Published
+                        </label>
+                    </div>
+
+                    @Html.ValidationMessageFor(model => model.IsPublished, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" asp-action="Index" asp-controller="Home" data-dismiss="modal">Close</button>
+            <input type="submit" value="Create" class="btn btn-success pull-left" />
+        </div>
+    </form>
+</div>
+
+

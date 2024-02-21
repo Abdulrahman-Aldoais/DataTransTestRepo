@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DataTransTest.Domain.Entity.Comment>
+
+@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+<div class="container" style="margin-top:20px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+
+            <div class="panel-heading text-center bg-dark text-white">
+                <h2 class="mb-4">التعليقات</h2>
+                <p style="margin-top:20px;">
+                    <button class="btn btn-success mb-2 mt-2 d-grid w-100" type="button">
+                        <span class="d-flex justify-content-center align-items-center text-nowrap">
+                            <i></i>
+                           
+                        </span>
+                    </button>
+                </p>
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th> @Html.DisplayNameFor(model => model.Id)</th>
+                        <th> @Html.DisplayNameFor(model => model.FullName)</th>
+                        <th> @Html.DisplayNameFor(model => model.IsPublish)</th>
+                        <th> @Html.DisplayNameFor(model => model.CreationDate)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var comment in Model)
+                    {
+                        <tr>
+                            <td>@comment.Id</td>
+                            <td>@comment.FullName</td>
+                            <td>@comment.IsPublish</td>
+                            <td>@comment.CreationDate</td>
+                            <td>
+                                <button type="button" class="btn btn-success" onclick="redirectToAddComment(@comment.Id)">عرض</button>
+                                <button type="button" class="btn btn-danger">حذف</button>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+
+
+    <script>
+       
+        function redirectToAddComment(postId) {
+            window.location.href = '/Post/ViewComment/' + postId;
+        }
+    </script>
+}
